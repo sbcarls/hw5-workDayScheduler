@@ -1,3 +1,22 @@
+<!--AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
+  
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with time blocks for standard business hours
+WHEN I view the time blocks for that day
+THEN each time block is color-coded to indicate whether it is in the past, present, or future
+WHEN I click into a time block
+THEN I can enter an event
+WHEN I click the save button for that time block
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist-->
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +39,9 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+    <!-- Added Moment.JS link-->
+    <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
+   
   </head>
 
   <body>
@@ -27,73 +49,77 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      <br>
+      <div id="currentDate"></div>
     </header>
+    
+   
     <div class="container">
       <!-- Timeblocks go here -->
       
+      <!-- Made changes per ronny here, to this one only-->
       <div class="row" id="9am">
-        <div class="col-md-1" id="time">9am</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
-      </div> 
+        <div class="col-md-1">9am</div>
+        <textarea class="col-md-10"></textarea>
+        <button data-hour="9" class="col-md-1 saveBtn">Save</button>
+      </div>
 
       <div class="row" id="10am">
-        <div class="col-md-1" id="time">10am</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">10am</div>
+        <textarea class="col-md-10"></textarea>
+        <button data-hour="10" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="11am">
-        <div class="col-md-1" id="time">11am</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">11am</div>
+        <textarea class="col-md-10"></textarea>
+        <button data-hour="11" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="12pm">
-        <div class="col-md-1" id="time">12pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">12pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button data-hour="12" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="1pm">
-        <div class="col-md-1" id="time">1pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">1pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button data-hour="13" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="2pm">
-        <div class="col-md-1" id="time">2pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">2pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button  data-hour="14" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="3pm">
-        <div class="col-md-1" id="time">3pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">3pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button  data-hour="15" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="4pm">
-        <div class="col-md-1" id="time">4pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">4pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button  data-hour="16" class="col-md-1 saveBtn">Save</button>
       </div>
 
       <div class="row" id="5pm">
-        <div class="col-md-1" id="time">5pm</div>
-        <textarea class="col-md-10" id="textEntry"></textarea>
-        <button class="col-md-1" id="saveBtn">Save</button>
+        <div class="col-md-1">5pm</div>
+        <textarea class="col-md-10"></textarea>
+        <button  data-hour="17" class="col-md-1 saveBtn">Save</button>
       </div>
 
-      <!-- <div id="calendar-row1" class="row justify-content-md-center border-top border-bottom calendar-row">
-        <div id="time1"class="col-md-1">8 AM</div>
-        <textarea rows="3" id="text-entry1" class="col-md-10"></textarea>
-        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-      </div> -->
-      
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Linked my JS file-->
+    <script src = "script.js"></script>
+    <script> src="lib/moment/moment.min.js"</script>
+    <script> console.log(moment());</script>
+    
   </body>
 </html>
