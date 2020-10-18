@@ -16,10 +16,17 @@ $(document).ready(function(){
     //$("#currentDay").display(currentDate);
     //console.log("currentDate");
 
+   
     $(".saveBtn").on("click", function(){
+        var hour = $(this).attr('data-hour');
         var textareacontent = $(this).siblings("textarea").val();
+  
+          console.log('Hour: ' + hour);
+          console.log('Content: ' + textareacontent);
+      });
 
-        console.log(textareacontent);
-    });
-
+      var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+      //var x = $(document).get("currentDate");
+      //$("#currentDate").("rightNow");
+      
 });
